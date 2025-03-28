@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+
+        .header-table {
+            width: 100%;
+            border: 1px solid black;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        .header-table td {
+            padding: 10px;
+            vertical-align: top;
+            text-align: left;
+            border: 1px solid black;
+        }
+
+        .header-table td:nth-child(1) {
+            width: 50%;
+        }
+
+        .header-table td:nth-child(2) {
+            width: 50%;
+        }
+
+        .center-text {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2 class="center-text">Invoice</h2>
+
+    <table class="header-table">
+        <tr>
+            <td>
+                <strong>Seller:</strong><br>
+                {{ data.seller }}<br>
+                {{ data.sellerAddress }}<br>
+                GSTIN: {{ data.sellerGstin }}
+            </td>
+            <td>
+                <strong>Buyer:</strong><br>
+                {{ data.buyer }}<br>
+                {{ data.buyerAddress }}<br>
+                GSTIN: {{ data.buyerGstin }}
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data.items %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.rate }}</td>
+                <td>{{ item.amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
