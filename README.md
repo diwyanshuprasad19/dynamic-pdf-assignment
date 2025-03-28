@@ -100,10 +100,10 @@ If the same data is provided again, the API will return the previously generated
 
 📦 Dependencies (requirements.txt)
 
-django
-djangorestframework
-weasyprint
-python-dotenv
+- django
+- djangorestframework
+- weasyprint
+- python-dotenv
 
 
 📌 Code Explanation
