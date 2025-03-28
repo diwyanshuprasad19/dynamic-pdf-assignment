@@ -107,12 +107,13 @@ If the same data is provided again, the API will return the previously generated
 
 
 📌 Code Explanation
-View (pdf_app/views.py)
-GeneratePDFView: Handles POST requests, generates PDF files, and returns them.
 
-Saves PDFs in the media/ directory and reuses files if the same data is provided.
+- View (pdf_app/views.py)
+- GeneratePDFView: Handles POST requests, generates PDF files, and returns them.
+
+- Saves PDFs in the media/ directory and reuses files if the same data is provided.
 
 🔍 Testing
-To test the API, use Postman or cURL to send a POST request to:
+- To test the API, use Postman or cURL to send a POST request to:
 
 - http://127.0.0.1:8000/api/v1/generate-pdf/
